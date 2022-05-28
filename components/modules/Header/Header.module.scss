@@ -1,19 +1,24 @@
-.headerLayout {
+.header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	padding: 1rem 0;
+
+	&Left {
+		display: flex;
+		align-items: center;
+		column-gap: 2.5rem;
+	}
+
+	&Right {
+		display: flex;
+		align-items: center;
+		column-gap: 2.5rem;
+	}
 }
 
-.headerLeft {
-	display: flex;
-	align-items: center;
-	column-gap: 2.5rem;
-}
-
-.headerRight {
-	display: flex;
-	align-items: center;
-	column-gap: 2.5rem;
+.profileIcon {
+	font-size: 2rem;
+    cursor: pointer;
 }

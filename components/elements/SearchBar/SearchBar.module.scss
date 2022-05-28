@@ -1,0 +1,39 @@
+.searchBar {
+	display: flex;
+	align-items: center;
+	height: 2rem;
+
+	&Control {
+		border: none;
+		background: 0 0;
+		padding-top: .2rem;
+
+		cursor: pointer;
+	}
+}
+
+.icon {
+	font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.input {	
+	height: 100%;
+	width: 0;
+	opacity: 0;
+
+	border-left: none;
+	outline: none;
+	transition: .3s ease-out;
+}
+
+._focused {
+	width: 16rem;
+	opacity: 1;
+}
+
+._outlined {
+	border: 2px solid black;
+	border-right: none;
+}
+

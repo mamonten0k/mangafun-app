@@ -10,18 +10,18 @@ const Dropdown = () => {
 
   return (
 	<div className={classes.dropdown}>
-		<BiMenuAltLeft className={classes.dropdownIcon} onClick={() => SetDropdownIsOpened(!dropdownIsOpened)}/>
-		<ul className={`${classes.dropdownItems} ${dropdownIsOpened && classes.opened}`}>
+		<BiMenuAltLeft className={classes.iconControl} onClick={() => SetDropdownIsOpened(!dropdownIsOpened)}/>
+		<ul className={`${classes.dropdownItems} ${dropdownIsOpened && classes._opened}`}>
 			<li className={classes.dropdownItem}>
-				<RiHome2Line className={classes.dropdownIcon}/>
+				<RiHome2Line className={classes.icon}/>
 				<span>Home Page</span>
 			</li>
 			<li className={classes.dropdownItem}>
-				<MdBook className={classes.dropdownIcon}/>
+				<MdBook className={classes.icon}/>
 				<span>Titles</span>
 			</li>
 			<li className={classes.dropdownItem}>
-				<GoSettings className={classes.dropdownIcon}/>
+				<GoSettings className={classes.icon}/>
 				<span>Settings</span>
 			</li>
 		</ul>

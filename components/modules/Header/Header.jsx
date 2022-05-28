@@ -1,19 +1,19 @@
-import { BiSearch } from 'react-icons/bi';
 import Dropdown from '../../elements/Dropdown/Dropdown';
+import SearchBar from '../../elements/SearchBar/SearchBar';
+import {CgProfile} from 'react-icons/cg'
 import classes from './Header.module.scss'
 
 const Header = () => {
   return (
-	<header className={classes.headerLayout}>
+	<header className={classes.header}>
 		<div className={classes.headerLeft}>
 			<Dropdown/>
 			<div className=''>Mangafun</div>
 		</div>
 		<div className={classes.headerLeft}>
-			<div className="">
-				<BiSearch/>
-				Search
-			</div>
+			<SearchBar/>
+			<div className=""></div>
+			<CgProfile className={classes.profileIcon}/>
 		</div>
 	</header>
   )
