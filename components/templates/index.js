@@ -1,2 +1,3 @@
 import { ProfilePage } from './ProfilePage/ProfilePage';
-export { ProfilePage };
+import { SettingsPage } from './SettingsPage/SettingsPage';
+export { ProfilePage, SettingsPage };
