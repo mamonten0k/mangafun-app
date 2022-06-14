@@ -1,0 +1,52 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+
+	margin-left: -0.26rem;
+}
+
+.controls {
+	display: flex;
+	justify-content: center;
+	column-gap: 0.7rem;
+}
+
+.slides-outer {
+	scroll-behavior: smooth;
+	overflow-x: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.slides-scope {
+	display: flex;
+	column-gap: 0.8rem;
+
+	padding-left: 0.26rem;
+	padding-bottom: 0.24rem;
+	z-index: 50;
+
+	transition: transform 0.2s;
+}
+
+.control {
+	content: "";
+
+	display: block;
+	width: 0.7rem;
+	height: 0.7rem;
+	border-radius: 50%;
+
+	background-color: rgb(214, 214, 214);
+	transition: all 0.2s;
+	cursor: pointer;
+
+	&:hover {
+		background-color: black;
+	}
+}
