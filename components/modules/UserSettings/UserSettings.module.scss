@@ -1,0 +1,57 @@
+@import "../../../styles/abstracts/mixins";
+
+.container-layout {
+	@include flex-with-gap(1.5rem);
+}
+
+.categories {
+	@include flex-col-with-gap(0.5rem);
+}
+
+.avatar {
+	@include flex-with-gap-both(1rem, 1rem);
+	flex-wrap: wrap;
+
+	& > h3 {
+		flex: 1 1 100%;
+	}
+}
+
+.profile-photo {
+	height: 7rem;
+	width: 7rem;
+
+	border-radius: 0.2rem;
+	background-color: rgb(210, 210, 210);
+	border: var(--border-basic);
+}
+
+.settings-profile {
+	@include flex-col-with-gap(2rem);
+	flex: 1;
+}
+
+.user {
+	&-data {
+		@include flex-col-with-gap(1rem);
+		flex: 1 1 100%;
+
+		position: relative;
+		padding-bottom: 0.5rem; // УБРАТЬ ПОТОМ
+
+		&::after {
+			@include line-horizontal;
+			margin-bottom: -0.8rem;
+		}
+	}
+
+	&-input {
+		@include flex-col-with-gap(0.5rem);
+		max-width: 70%;
+
+		& > input {
+			@include input-base;
+			box-shadow: var(--shadow-basic);
+		}
+	}
+}
