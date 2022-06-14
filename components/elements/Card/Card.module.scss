@@ -1,0 +1,69 @@
+@import "../../../styles/abstracts/mixins";
+
+.layout {
+	@include flex-with-gap(0.5rem);
+
+	border: var(--border-basic);
+	border-radius: 0 0.4rem 0 0.4rem;
+	border-left: none;
+	border-bottom: none;
+
+	box-shadow: var(--shadow-basic);
+	cursor: pointer;
+
+	background-color: white;
+}
+
+.img {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+
+	&--lg {
+		width: 8rem;
+	}
+
+	&--md {
+		width: 5rem;
+		height: 7.41rem;
+	}
+
+	&--sm {
+		width: 3rem;
+	}
+
+	&-rounded {
+		border-radius: 0 0 0 0.4rem;
+	}
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+
+	padding: 0.6rem 0;
+
+	&--lg {
+		width: 15rem;
+		row-gap: 0.1rem;
+	}
+
+	&--md {
+		padding: 2rem 0;
+		row-gap: 1rem;
+	}
+
+	&--sm {
+		padding: 0.4rem;
+		row-gap: 1.4rem;
+	}
+}
+
+.text {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 10;
+	font-size: 0.8rem;
+	line-height: 130%;
+}
