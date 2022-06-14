@@ -1,0 +1,48 @@
+@import "../../../styles/abstracts/mixins";
+
+.layout {
+	@include flex-col-with-gap(2.5rem);
+}
+
+.header {
+	@include flex-with-gap(1rem);
+
+	padding-top: 2.5rem;
+	position: relative;
+}
+
+.navigation {
+	position: relative;
+
+	& > *:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+
+	&::after {
+		@include line-horizontal;
+	}
+}
+
+.breadcrumbs {
+	align-self: flex-end;
+	padding-bottom: 0.5rem;
+}
+
+.sections {
+	@include flex-col-with-gap(1rem);
+	padding-top: 2.5rem;
+}
+
+.tools {
+	@include flex-with-gap(0.7rem);
+	width: 97%;
+}
+
+.input {
+	@include input-base;
+	flex: 1;
+}
+
+.items {
+	@include flex-col-with-gap(0.7rem);
+}
