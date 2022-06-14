@@ -1,32 +1,55 @@
-import { useState } from "react"
-import { BiMenuAltLeft } from "react-icons/bi"
-import { GoSettings } from "react-icons/go"
-import { MdBook } from "react-icons/md"
-import { RiHome2Line } from "react-icons/ri"
-import classes from './Dropdown.module.scss'
+import { useRef } from 'react';
+import { Accordion } from '../';
+import { useDetectOutsideClick } from '../../../hooks/useDetectOutsideClick';
+import classes from './Dropdown.module.scss';
 
+//Проверить, можно ли как-нибудь переписать
+//Теперь я доволен аккордеоном, но лучше переделать ещё раз почекать Dd
 const Dropdown = () => {
-	const [dropdownIsOpened, SetDropdownIsOpened] = useState(false);
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useDetectOutsideClick(
+    dropdownRef,
+    false
+  );
+
+  const HandleClick = () => {
+    setIsActive(!isActive);
+  };
 
   return (
-	<div className={classes.dropdown}>
-		<BiMenuAltLeft className={classes.iconControl} onClick={() => SetDropdownIsOpened(!dropdownIsOpened)}/>
-		<ul className={`${classes.dropdownItems} ${dropdownIsOpened && classes._opened}`}>
-			<li className={classes.dropdownItem}>
-				<RiHome2Line className={classes.icon}/>
-				<span>Home Page</span>
-			</li>
-			<li className={classes.dropdownItem}>
-				<MdBook className={classes.icon}/>
-				<span>Titles</span>
-			</li>
-			<li className={classes.dropdownItem}>
-				<GoSettings className={classes.icon}/>
-				<span>Settings</span>
-			</li>
-		</ul>
-	</div>
-  )
-}
+    <div className={classes.layout}>
+      <img
+        src='./Burger.svg'
+        alt='Dropdown toggle button'
+        className='icon icon-control'
+        onClick={HandleClick}
+      />
+      <div
+        className={`${classes.content}`}
+        style={isActive ? { top: '0' } : {}}
+        ref={dropdownRef}>
+        <div className={classes.header}>
+          <h2>mangafun</h2>
+          <img
+            src='./Close.svg'
+            alt='Dropdown close button'
+            className='icon'
+            onClick={HandleClick}
+          />
+        </div>
+        <Accordion withIcons={true}>
+          <div label='Home Page'></div>
+          <div label='Titles'>
+            <li key={'Titles-1'}>Advanced Search</li>
+            <li key={'Titles-2'}>Updates</li>
+            <li key={'Titles-3'}>Popular</li>
+            <li key={'Titles-4'}>Random</li>
+          </div>
+          <div label='Settings'></div>
+        </Accordion>
+      </div>
+    </div>
+  );
+};
 
-export default Dropdown
+export { Dropdown };

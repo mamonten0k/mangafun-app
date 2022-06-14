@@ -1,45 +1,54 @@
-@import '../../../styles/abstracts/mixins';
+@import "../../../styles/abstracts/mixins";
 
-.dropdown {
+.layout {
 	display: flex;
 	flex-direction: column;
 
-	&Items {
+	z-index: 100;
+}
+
+.content {
+	position: absolute;
+	top: -100vh;
+	left: -0.5rem;
+
+	@include flex-col-with-gap(1.6rem);
+	height: 100vh;
+
+	background-color: rgb(255, 255, 255);
+	transition: 0.3s ease-in-out;
+
+	&::before {
+		content: "";
 		position: absolute;
-		top: -1000%;
 		left: 0;
-	
-		display: flex;
-		flex-direction: column;
-		row-gap: 1rem;
-	
-		padding: 2rem;	
-		max-width: 25vw;
-	
-		background-color: rgb(205, 205, 205);
-		height: 100vh;
-	
-		transition: all .3s;
-	}
+		top: 0;
 
-	&Item {
-		display: flex;
-		align-items: center;
-		column-gap: 2rem;
-	
-		cursor: pointer;
+		width: 4.5rem;
+		height: 100%;
+
+		background-color: #ff5c5c;
 	}
 }
 
-.icon {
-	font-size: 1.6rem;
+.header {
+	@include flex-with-gap(5rem);
+	align-items: center;
+	justify-content: space-between;
 
-	&Control {
-		font-size: 2rem;
-		cursor: pointer;
+	padding: 1.78rem 1rem;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+		display: block;
+		width: 100%;
+		height: 2.5px;
+
+		background-color: black;
 	}
-}
-
-._opened {
-	top: 0;
 }
