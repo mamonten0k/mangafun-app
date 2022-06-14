@@ -1,0 +1,47 @@
+@import "../../../styles/abstracts/mixins";
+
+.layout {
+	@include flex-with-gap(2rem);
+
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0.5rem;
+
+	background-color: white;
+	border: var(--border-basic);
+
+	cursor: pointer;
+
+	&-default {
+		border-left: none;
+		border-bottom: none;
+		border-radius: 0 0.4rem 0 0.4rem;
+
+		box-shadow: var(--shadow-basic);
+	}
+}
+
+.info {
+	& > *:not(:last-child) {
+		margin-bottom: 0.5rem;
+	}
+}
+
+.text {
+	word-break: break-all;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	font-size: 0.8rem;
+	line-height: 130%;
+
+	&-minimalistic {
+		-webkit-line-clamp: 1;
+	}
+
+	&-default {
+		-webkit-line-clamp: 2;
+	}
+}
