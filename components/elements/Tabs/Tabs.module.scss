@@ -1,0 +1,35 @@
+@import "../../../styles/abstracts/mixins";
+
+.layout {
+	@include flex-col-with-gap(1rem);
+
+	box-shadow: var(--shadow-basic-right);
+
+	background-color: white;
+	padding: 1rem;
+}
+
+.tabs {
+	@include flex-with-gap(2rem);
+	position: relative;
+
+	&::after {
+		@include line-horizontal;
+	}
+}
+
+.tab {
+	padding-bottom: 0.2rem;
+	border-bottom: 8px solid transparent;
+	transition: border-bottom 0.2s ease-out;
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		font-size: 1.1rem;
+	}
+
+	&-active {
+		border-bottom: 8px solid black;
+	}
+}
