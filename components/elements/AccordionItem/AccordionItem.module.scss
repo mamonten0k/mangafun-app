@@ -1,0 +1,48 @@
+@import "../../../styles/abstracts/mixins";
+
+.item {
+	position: relative;
+	overflow: hidden;
+
+	&--visible {
+		@include flex-with-gap(1.8rem);
+		align-items: center;
+
+		cursor: pointer;
+		transition: 0.3s ease-in-out;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.faq {
+	@include flex-col-with-gap(0.8rem);
+	padding-left: 4.4rem;
+
+	&-wrapper {
+		transition: all 0.2s ease-in;
+		opacity: 0;
+		height: 0;
+		position: relative;
+	}
+
+	& > * {
+		//Временно, потом при лутании навигации адекватной, делать это сразу в Accordion
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+._active {
+	//Не очень нравится класс active в принципеы
+	height: 9rem;
+	opacity: 1;
+	position: relative;
+	padding-top: 1.5rem;
+	top: 0;
+}
