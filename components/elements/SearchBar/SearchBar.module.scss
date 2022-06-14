@@ -1,39 +1,39 @@
-.searchBar {
+@import "../../../styles/abstracts/mixins";
+
+.layout {
 	display: flex;
 	align-items: center;
-	height: 2rem;
+}
 
-	&Control {
-		border: none;
-		background: 0 0;
-		padding-top: .2rem;
+.control {
+	border: none;
+	background: 0 0;
+	padding-top: 0.2rem;
 
-		cursor: pointer;
-	}
+	cursor: pointer;
 }
 
 .icon {
-	font-size: 1.3rem;
-    cursor: pointer;
+	font-size: 1.4rem;
+	cursor: pointer;
 }
 
-.input {	
-	height: 100%;
+.input {
+	@include input-base;
 	width: 0;
 	opacity: 0;
-
 	border-left: none;
+
 	outline: none;
-	transition: .3s ease-out;
+	transition: 0.3s ease-out;
 }
 
 ._focused {
-	width: 16rem;
+	width: 18rem;
 	opacity: 1;
 }
 
 ._outlined {
-	border: 2px solid black;
+	border: var(--border-basic);
 	border-right: none;
 }
-
