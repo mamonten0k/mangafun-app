@@ -1,0 +1,40 @@
+@import "../../../styles/abstracts/mixins";
+
+.layout {
+	@include flex-with-gap(1.5rem);
+	justify-content: space-between;
+
+	position: relative;
+
+	padding: 2.5rem 0; //Посмотреть как грамотно ставить отступы
+}
+
+.column {
+	@include flex-col-with-gap(2rem);
+	z-index: 50;
+
+	&-right {
+		flex: 1;
+
+		padding-top: 2.5rem;
+		margin-right: 0.5rem;
+	}
+}
+
+.tabs {
+	background-color: white !important;
+}
+
+.info {
+	@include flex-col-with-gap(1rem);
+
+	box-shadow: var(--shadow-basic-right);
+
+	padding: 0.8rem;
+	background-color: white;
+	z-index: 100;
+}
+
+.items {
+	@include flex-col-with-gap(1rem);
+}
