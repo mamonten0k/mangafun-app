@@ -1,19 +1,25 @@
+import { Tabs } from '../../elements';
+import { Button } from '../../elements/Button/Button';
 import styles from './SettingsPage.module.scss';
+
+/**
+ * Tabs
+ *    Tabs
+ *    /TabsVertival TabsVertical.module.scss TabsVertival.jsx
+ *    /TabsHorizontal TabsHorizontal.module.scss TabsHorizontal.jsx
+ */
 
 const SettingsPage = () => {
   return (
-    <div className={styles.layout}>
-      <div className={styles.categories}>
-        <button>Profile Settings</button>
-        <button>Confidetiality Settings</button>
-      </div>
-      <div className={styles['settings-profile']}>
+    <Tabs initialTab={'Profile Settings'} flow={'horizontal'}>
+      <div className={styles['settings-profile']} label='Profile Settings'>
         <div className={styles.avatar}>
           <h3>Profile photo</h3>
           <div className={styles['profile-photo']}></div>
           <div className={styles['profile-photo']}></div>
         </div>
         <div className={styles['user-data']}>
+          {/* //Сделать компонент инпут, в который если что будет вводится Заголовок */}
           <div className={styles['user-input']}>
             <h3>Profile name</h3>
             <input type='text' />
@@ -31,9 +37,16 @@ const SettingsPage = () => {
             <input type='text' />
           </div>
         </div>
-        <button className='btn btn-default'>Save</button>
+        <Button direction={'left'} width={'10rem'}>
+          Save
+        </Button>
       </div>
-    </div>
+      <div
+        className={styles['settings-profile']}
+        label='Confidentiality Settings'>
+        ASADDWA
+      </div>
+    </Tabs>
   );
 };
 
