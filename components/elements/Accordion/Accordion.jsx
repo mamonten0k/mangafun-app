@@ -1,17 +1,15 @@
-import { AccordionItem } from '../AccordionItem/AccordionItem';
-import classes from './Accordion.module.scss';
+import { AccordionItem } from './AccordionItem/AccordionItem';
+import styles from './Accordion.module.scss';
 
 const Accordion = ({ children, withIcons }) => {
-  children.forEach((item) => console.dir(item));
   return (
-    <ul className={classes.layout}>
+    <ul className={styles.layout}>
       {children.map((item) => (
         <AccordionItem
           key={item.props.label}
           heading={item.props.label}
-          icon={
-            withIcons && `${item.props.label.split(' ').join('')}.svg`
-          }>
+          outerLink={item.props.label.toLowerCase()}
+          icon={withIcons && `${item.props.label.split(' ').join('')}.svg`}>
           {item.props.children}
         </AccordionItem>
       ))}

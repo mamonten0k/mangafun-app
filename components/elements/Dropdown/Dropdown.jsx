@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Accordion } from '../';
+import { Accordion } from '..';
 import { useDetectOutsideClick } from '../../../hooks/useDetectOutsideClick';
 import classes from './Dropdown.module.scss';
 
@@ -7,10 +7,7 @@ import classes from './Dropdown.module.scss';
 //Теперь я доволен аккордеоном, но лучше переделать ещё раз почекать Dd
 const Dropdown = () => {
   const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(
-    dropdownRef,
-    false
-  );
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
 
   const HandleClick = () => {
     setIsActive(!isActive);

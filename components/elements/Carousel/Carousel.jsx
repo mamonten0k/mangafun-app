@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { Card } from '../';
 import classes from './Carousel.module.scss';
 
-// ToDo Correctly show cards in carousel, make a scroll calc funcion to prevent overscroll
-const Carousel = ({ titles }) => {
+// ToDo Correctly show items in carousel, make a scroll calc funcion to prevent overscroll
+const Carousel = ({ children }) => {
   const [slideScoped, setSlideScoped] = useState(0);
 
   const handleScoped = (evt) => {
@@ -18,15 +17,13 @@ const Carousel = ({ titles }) => {
           style={{
             transform: `translateX(-${(slideScoped - 1) * 421.3}px)`,
           }}>
-          {titles.map((title) => (
-            <Card id={title.id} type='lg' title={title} />
-          ))}
+          {children}
         </div>
       </div>
       <div className={classes.controls}>
-        {titles.map((title) => (
+        {children.map((child) => (
           <span
-            key={title.id}
+            key={`${child.key}-cl`}
             className={classes.control}
             onClick={handleScoped}></span>
         ))}
