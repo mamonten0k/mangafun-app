@@ -1,13 +1,5 @@
 @import "../../../styles/abstracts/mixins";
 
-.layout {
-	@include flex-with-gap(1.5rem);
-}
-
-.categories {
-	@include flex-col-with-gap(0.5rem);
-}
-
 .avatar {
 	@include flex-with-gap-both(1rem, 1rem);
 	flex-wrap: wrap;
@@ -37,7 +29,7 @@
 		flex: 1 1 100%;
 
 		position: relative;
-		padding-bottom: 0.5rem; // УБРАТЬ ПОТОМ
+		padding-bottom: 0.5rem; // ПОТОМ УБРАТЬ
 
 		&::after {
 			@include line-horizontal;
@@ -51,7 +43,6 @@
 
 		& > input {
 			@include input-base;
-			box-shadow: var(--shadow-basic);
 		}
 	}
 }
