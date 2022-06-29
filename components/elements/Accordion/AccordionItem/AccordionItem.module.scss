@@ -9,7 +9,7 @@
 		align-items: center;
 
 		cursor: pointer;
-		transition: 0.3s ease-in-out;
+		transition: var(--transition-basic);
 
 		&:hover {
 			text-decoration: underline;
@@ -39,7 +39,7 @@
 }
 
 ._active {
-	//Не очень нравится класс active в принципеы
+	//Не очень нравится класс active в принципе
 	height: 9rem;
 	opacity: 1;
 	position: relative;
