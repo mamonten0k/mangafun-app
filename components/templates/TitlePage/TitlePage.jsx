@@ -63,14 +63,16 @@ const TitlePage = ({ title, chapters, titles }) => {
           </div>
           <div className={styles.items} label='Chapters'>
             {chapters.map((chapter) => (
-              <div className=''>{chapter.id}</div>
+              <div key={chapter.id} className=''>
+                {chapter.id}
+              </div>
             ))}
           </div>
           <div className={styles.items} label='Comments'>
-            {chapters.map((comment) => (
+            {chapters.map((chapter) => (
               <Comment
                 type='minimalistic'
-                key={`comment-${title.id}`}
+                key={`comment-${chapter.id}`}
                 title={title}
               />
             ))}
@@ -81,7 +83,7 @@ const TitlePage = ({ title, chapters, titles }) => {
         <h3>Similar</h3>
         <hr />
         {titles.map((title) => (
-          <Card type='sm' title={title} />
+          <Card key={title.id} type='sm' title={title} />
         ))}
       </section>
       <div className='_ibg'>

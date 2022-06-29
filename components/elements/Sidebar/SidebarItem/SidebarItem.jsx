@@ -44,7 +44,7 @@ const SidebarItem = ({ children, heading, icon, isOpened }) => {
       {children && (
         <ul className={styles['submenu--extended']}>
           {children.map((child) => (
-            <li>{child}</li>
+            <li key={heading}>{child}</li>
           ))}
         </ul>
       )}
