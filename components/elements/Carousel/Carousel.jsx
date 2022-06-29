@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import classes from './Carousel.module.scss';
 
 // ToDo Correctly show items in carousel, make a scroll calc funcion to prevent overscroll
@@ -24,7 +25,7 @@ const Carousel = ({ children }) => {
       <div className={classes.controls}>
         {children.map((child) => (
           <span
-            key={`${child.key}-cl`}
+            key={uuidv4()}
             className={classes.control}
             onClick={handleScoped}></span>
         ))}

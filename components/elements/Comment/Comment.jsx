@@ -1,11 +1,16 @@
-import classes from './Comment.module.scss';
+import styles from './Comment.module.scss';
 
 const Comment = ({ type }) => {
+  styles['layout-extended'] = [styles.layout, styles[`layout-${type}`]].join(
+    ' '
+  );
+  styles['text-extended'] = [styles.text, styles[`text-${type}`]].join(' ');
+
   return (
-    <div className={`${classes.layout} ${classes[`layout-${type}`]}`}>
-      <div className={classes.info}>
+    <div className={styles['layout-extended']}>
+      <div className={styles.info}>
         <h3>Vagabond</h3>
-        <div className={`${classes.text} ${classes[`text-${type}`]}`}>
+        <div className={styles['text-extended']}>
           HAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAHHAHAHAHAHAHAAH
         </div>
       </div>

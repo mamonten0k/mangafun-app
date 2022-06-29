@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { slugify } from '../../../utils/slugify';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './Tabs.module.scss';
 
 const Tabs = ({ children, initialTab, withBg }) => {
@@ -38,7 +39,7 @@ const Tabs = ({ children, initialTab, withBg }) => {
             className={`${styles.tab} ${
               slugify(tab.props.label) == activeTab ? styles['tab-active'] : ''
             }`}
-            key={tab.props.label}>
+            key={uuidv4()}>
             <a href='#' onClick={(e) => handleClick(e, tab.props.label)}>
               {tab.props.label}
             </a>

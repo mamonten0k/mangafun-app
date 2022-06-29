@@ -29,7 +29,7 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.navigation}>
           <li>
-            <Link href='/'>
+            <Link href='/' passHref>
               <SidebarItem
                 heading='Home page'
                 icon='/Home.svg'
@@ -42,22 +42,22 @@ const Sidebar = () => {
               heading='Titles'
               icon='/Titles.svg'
               isOpened={isOpened}>
-              <Link href='/search'>
+              <Link href='/search' passHref>
                 <span>Advanced Search</span>
               </Link>
-              <Link href='/search?filter=popular'>
+              <Link href='/search?filter=popular' passHref>
                 <span>Popular</span>
               </Link>
-              <Link href='/title?id=random'>
+              <Link href='/title?id=random' passHref>
                 <span>Random</span>
               </Link>
-              <Link href='/profile?tab=titles'>
+              <Link href='/profile?tab=titles' passHref>
                 <span>My Titles</span>
               </Link>
             </SidebarItem>
           </li>
           <li>
-            <Link href='/settings'>
+            <Link href='/profile' passHref>
               <SidebarItem
                 heading='Settings'
                 icon='/Settings.svg'

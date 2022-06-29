@@ -3,6 +3,7 @@ import { AccordionItem } from './Accordion/AccordionItem/AccordionItem';
 import { Button } from './Button/Button';
 import { Card } from './Card/Card';
 import { Carousel } from './Carousel/Carousel';
+import { Chapter } from './Chapter/Chapter';
 import { Comment } from './Comment/Comment';
 import { Input } from './Input/Input';
 import { Overlay } from './Overlay/Overlay';
@@ -17,6 +18,7 @@ export {
   Button,
   Card,
   Carousel,
+  Chapter,
   Comment,
   Input,
   Overlay,

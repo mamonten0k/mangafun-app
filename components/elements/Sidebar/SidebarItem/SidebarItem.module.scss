@@ -39,7 +39,7 @@
 
 .submenu {
 	@include flex-col-with-gap(1.25rem);
-	padding: 2rem 0 0 5.2rem;
+	padding: 3rem 0 0 5.2rem;
 
 	&--closed {
 		display: none;
