@@ -1,2 +1,3 @@
 import { Provider } from './Provider/Provider';
-export { Provider };
+import { HeadingProvider } from './HeadingProvider/HeadingProvider';
+export { Provider, HeadingProvider };

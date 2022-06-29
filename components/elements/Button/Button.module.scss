@@ -1,0 +1,44 @@
+.default {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 0.4rem;
+
+	font-size: 1rem;
+	font-weight: 600;
+
+	border: var(--border-basic);
+	background-color: var(--color-highlight);
+
+	cursor: pointer;
+	transition: var(--transition-quick);
+
+	// &:hover {
+	// 	border-color: white;
+	// 	color: white;
+	// }
+}
+
+.blank {
+	background-color: transparent;
+	border: none;
+	overflow: hidden;
+
+	padding: 0;
+	margin: 0;
+}
+
+.direction {
+	&-left {
+		border-bottom: none;
+		border-left: none;
+		box-shadow: var(--shadow-basic);
+	}
+
+	&-right {
+		border-bottom: none;
+		border-right: none;
+		box-shadow: var(--shadow-basic-right);
+	}
+}
