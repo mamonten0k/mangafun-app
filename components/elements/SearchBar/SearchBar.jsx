@@ -1,14 +1,12 @@
 import { useRef } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { useDetectOutsideClick } from '../../../hooks/useDetectOutsideClick';
+import { Input } from '../Input/Input';
 import classes from './SearchBar.module.scss';
 
 const SearchBar = () => {
   const inputRef = useRef(null);
-  const [isActive, setIsActive] = useDetectOutsideClick(
-    inputRef,
-    false
-  );
+  const [isActive, setIsActive] = useDetectOutsideClick(inputRef, false);
 
   const HandleClick = () => {
     setIsActive(!isActive);
@@ -24,11 +22,9 @@ const SearchBar = () => {
         onClick={HandleClick}>
         <BiSearch className={`${classes.icon}`} />
       </button>
-      <input
-        className={`${classes.input} ${isActive && classes._focused}`}
-        type='text'
+      <Input
         ref={inputRef}
-        placeholder='Type to search...'
+        classes={`${classes.input} ${isActive && classes._focused}`}
       />
     </div>
   );
