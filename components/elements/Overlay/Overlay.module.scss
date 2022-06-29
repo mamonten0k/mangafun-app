@@ -1,0 +1,10 @@
+.overlay {
+	position: fixed;
+	z-index: 50;
+	top: 0;
+
+	height: 100%;
+	width: 100%;
+
+	background-color: rgba($color: black, $alpha: 0.3);
+}
