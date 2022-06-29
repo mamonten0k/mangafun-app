@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Breadcrumb, Card, Comment, Tabs } from '../../elements';
+import { v4 as uuidv4 } from 'uuid';
 import styles from './ProfilePage.module.scss';
 
 const ProfilePage = ({ titles }) => {
@@ -13,24 +14,19 @@ const ProfilePage = ({ titles }) => {
           height={120}
           alt='User profile image'
           objectFit='cover'
+          priority
           style={{ borderRadius: '.4rem' }}
         />
-        {/* <Breadcrumb path={['/', 'profile']} /> */}
       </div>
       <Tabs initialTab='Titles' flow='vertical'>
         <div className={styles.items} label='Titles'>
           {titles.map((title) => (
-            <Card
-              key={`title-${title.id}`}
-              id={title.id}
-              type='md'
-              title={title}
-            />
+            <Card key={uuidv4()} id={title.id} type='md' title={title} />
           ))}
         </div>
         <div className={styles.items} label='Comments'>
           {titles.map((title) => (
-            <Comment key={`comment-${title.id}`} title={title} type='default' />
+            <Comment key={uuidv4()} title={title} type='default' />
           ))}
         </div>
       </Tabs>
