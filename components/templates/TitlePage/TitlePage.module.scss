@@ -1,23 +1,25 @@
 @import "../../../styles/abstracts/mixins";
 
 .layout {
-	@include flex-with-gap(1.5rem);
+	@include flex-with-gap(1.8rem);
 	justify-content: space-between;
-
-	position: relative;
-
-	padding: 2.5rem 0; //Посмотреть как грамотно ставить отступы
 }
 
 .column {
 	@include flex-col-with-gap(2rem);
-	z-index: 50;
 
-	&-right {
+	padding-top: 1.8rem;
+
+	&-mid {
 		flex: 1;
 
 		padding-top: 2.5rem;
-		margin-right: 0.5rem;
+	}
+
+	&-last {
+		flex: 1;
+		padding-top: 6.93rem;
+		row-gap: 0.7rem;
 	}
 }
 
@@ -31,8 +33,7 @@
 	box-shadow: var(--shadow-basic-right);
 
 	padding: 0.8rem;
-	background-color: white;
-	z-index: 100;
+	background-color: #f9f9f9;
 }
 
 .items {

@@ -1,12 +1,24 @@
-import { Comment, Tabs } from '../../elements';
+import Image from 'next/image';
+import { Card, Comment, Tabs } from '../../elements';
+import { Button } from '../../elements/Button/Button';
 import styles from './TitlePage.module.scss';
 
-function TitlePage({ title, chapters }) {
+const TitlePage = ({ title, chapters, titles }) => {
+  console.log(titles);
+  styles['column-md'] = [styles.column, styles['column-mid']].join(' ');
+  styles['column-end'] = [styles.column, styles['column-last']].join(' ');
+
   return (
     <div className={styles.layout}>
       <div className={styles.column}>
-        <img src={title.img} alt={`${title.name}  cover image`} />
-        <button className='btn'>Start reading</button>
+        <Image
+          layout='fixed'
+          src={title.img}
+          width={160}
+          height={225}
+          objectFit='cover'
+        />
+        <Button direction='right'>Start reading</Button>
         <ul className={styles.info}>
           <li>
             Type
@@ -40,12 +52,12 @@ function TitlePage({ title, chapters }) {
           </li>
         </ul>
       </div>
-      <section className={`${styles.column} ${styles['column-right']}`}>
+      <section className={styles['column-md']}>
         <div className={styles.name}>
           {title.name} <br />
           {title.subname}
         </div>
-        <Tabs initialTab={'Info'}>
+        <Tabs initialTab='Info' flow='vertical'>
           <div className={styles.items} label='Info'>
             INFO
           </div>
@@ -57,7 +69,7 @@ function TitlePage({ title, chapters }) {
           <div className={styles.items} label='Comments'>
             {chapters.map((comment) => (
               <Comment
-                type={'minimalistic'}
+                type='minimalistic'
                 key={`comment-${title.id}`}
                 title={title}
               />
@@ -65,12 +77,18 @@ function TitlePage({ title, chapters }) {
           </div>
         </Tabs>
       </section>
+      <section className={styles['column-end']}>
+        <h3>Similar</h3>
+        <hr />
+        {titles.map((title) => (
+          <Card type='sm' title={title} />
+        ))}
+      </section>
       <div className='_ibg'>
-        {/* Или с помощью next/image */}
         <img src={`${title.bg}`} alt='' />
       </div>
     </div>
   );
-}
+};
 
 export { TitlePage };
