@@ -1,12 +1,7 @@
 @import "../../../styles/abstracts/mixins";
 
-.layout-vertical {
+.layout {
 	@include flex-col-with-gap(1rem);
-}
-
-.layout-horizontal {
-	padding-top: 2.5rem;
-	@include flex-with-gap(3rem);
 }
 
 .layout-bg {
@@ -15,13 +10,7 @@
 	box-shadow: var(--shadow-basic-right);
 }
 
-.tabs-horizontal {
-	@include flex-col-with-gap(1rem);
-	position: relative;
-	height: 100%;
-}
-
-.tabs-vertical {
+.tabs {
 	@include flex-with-gap(2rem);
 	position: relative;
 
@@ -30,37 +19,9 @@
 	}
 }
 
-//Всё-таки переписать
-.tab-horizontal {
-	padding: 0.4rem 1rem 0.4rem 0.4rem;
-
-	border: 2.5px solid transparent;
-	border-top: none;
-	border-right: none;
-
-	cursor: pointer;
-
-	a {
-		text-decoration: none;
-		color: inherit;
-		font-size: 1.1rem;
-	}
-
-	&--active {
-		background-color: white;
-		border-color: black;
-
-		box-shadow: 4px -4px rgba(0, 0, 0, 0.4);
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-}
-
-.tab-vertical {
+.tab {
 	padding-bottom: 0.2rem;
-	border-bottom: 10px solid transparent;
+	border-bottom: 8px solid transparent;
 	transition: border-bottom var(--transition-basic);
 
 	a {
@@ -69,7 +30,7 @@
 		font-size: 1.1rem;
 	}
 
-	&--active {
-		border-bottom: 10px solid black;
+	&-active {
+		border-bottom: 8px solid black;
 	}
 }
