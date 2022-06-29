@@ -40,9 +40,5 @@
 	&-input {
 		@include flex-col-with-gap(0.5rem);
 		max-width: 70%;
-
-		& > input {
-			@include input-base;
-		}
 	}
 }

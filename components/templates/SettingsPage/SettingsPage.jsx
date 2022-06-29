@@ -1,51 +1,38 @@
-import { Tabs } from '../../elements';
+import { Input, Tabs } from '../../elements';
 import { Button } from '../../elements/Button/Button';
+import { HeadingProvider } from '../../layouts';
 import styles from './SettingsPage.module.scss';
-
-/**
- * Tabs
- *    Tabs
- *    /TabsVertival TabsVertical.module.scss TabsVertival.jsx
- *    /TabsHorizontal TabsHorizontal.module.scss TabsHorizontal.jsx
- */
 
 const SettingsPage = () => {
   return (
-    <Tabs initialTab={'Profile Settings'} flow={'horizontal'}>
+    <Tabs initialTab='Profile Settings'>
       <div className={styles['settings-profile']} label='Profile Settings'>
-        <div className={styles.avatar}>
-          <h3>Profile photo</h3>
+        <HeadingProvider
+          classes={styles.avatar}
+          type='h3'
+          heading='Profile photo'>
           <div className={styles['profile-photo']}></div>
           <div className={styles['profile-photo']}></div>
-        </div>
+        </HeadingProvider>
         <div className={styles['user-data']}>
-          {/* //Сделать компонент инпут, в который если что будет вводится Заголовок */}
-          <div className={styles['user-input']}>
-            <h3>Profile name</h3>
-            <input type='text' />
-          </div>
-          <div className={styles['user-input']}>
-            <h3>Profile name</h3>
-            <input type='text' />
-          </div>
-          <div className={styles['user-input']}>
-            <h3>Profile name</h3>
-            <input type='text' />
-          </div>
-          <div className={styles['user-input']}>
-            <h3>Profile name</h3>
-            <input type='text' />
-          </div>
+          <HeadingProvider type='h3' heading='Profile name'>
+            <Input placeholder='Type your nickname' />
+          </HeadingProvider>
+          <HeadingProvider type='h3' heading='Profile name'>
+            <Input placeholder='Type your nickname' />
+          </HeadingProvider>
+          <HeadingProvider type='h3' heading='Profile name'>
+            <Input placeholder='Type your nickname' />
+          </HeadingProvider>
+          <HeadingProvider type='h3' heading='Profile name'>
+            <Input placeholder='Type your nickname' />
+          </HeadingProvider>
         </div>
-        <Button direction={'left'} width={'10rem'}>
+        <Button direction='left' width='10rem'>
           Save
         </Button>
       </div>
-      <div
-        className={styles['settings-profile']}
-        label='Confidentiality Settings'>
-        ASADDWA
-      </div>
+      <div label='Confidentiality Settings'>ASADDWA</div>
     </Tabs>
   );
 };
