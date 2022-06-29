@@ -1,26 +1,22 @@
-import { Dropdown } from '../../elements';
-import { SearchBar } from '../../elements';
-import classes from './Header.module.scss';
 import Link from 'next/link';
+import { Sidebar } from '../../elements';
+import { SearchBar } from '../../elements';
+import styles from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header className='header'>
-      <div className={`container ${classes['container-layout']}`}>
-        <div className={classes.left}>
-          <Dropdown />
+    <header className={styles.base}>
+      <div className={`${styles.layout}`}>
+        <div className={styles.left}>
+          <Sidebar />
           <Link href='/'>
-            <div className={classes.logo}>mangafun</div>
+            <div className={styles.logo}>mangafun</div>
           </Link>
         </div>
-        <div className={classes.right}>
+        <div className={styles.right}>
           <SearchBar />
           <Link href='/profile'>
-            <img
-              src='./Profile.svg'
-              alt='User profile icon'
-              className={classes['profile-icon']}
-            />
+            <img src='/Profile.svg' alt='Profile icon' className='icon' />
           </Link>
         </div>
       </div>
