@@ -38,12 +38,12 @@
 	content: "";
 
 	display: block;
-	width: 0.7rem;
-	height: 0.7rem;
+	width: 0.6rem;
+	height: 0.6rem;
 	border-radius: 50%;
 
 	background-color: rgb(214, 214, 214);
-	transition: all 0.2s;
+	transition: var(--transition-quick);
 	cursor: pointer;
 
 	&:hover {

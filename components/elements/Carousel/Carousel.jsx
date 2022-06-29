@@ -6,7 +6,8 @@ const Carousel = ({ children }) => {
   const [slideScoped, setSlideScoped] = useState(0);
 
   const handleScoped = (evt) => {
-    setSlideScoped(evt.target.id);
+    console.log(evt.target.key);
+    setSlideScoped(evt.target.key);
   };
 
   return (
