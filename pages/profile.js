@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { Provider } from '../components/layouts';
 import { ProfilePage } from '../components/templates/ProfilePage/ProfilePage';
 

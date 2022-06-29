@@ -1,12 +1,12 @@
 @import "../../../styles/abstracts/mixins";
 
 .layout {
-	@include flex-col-with-gap(2.5rem);
+	@include flex-col-with-gap(1.8em);
 }
 
 .title {
 	position: relative;
-	padding-top: 2.5rem;
+	padding-top: 2rem;
 
 	&::after {
 		@include line-horizontal;

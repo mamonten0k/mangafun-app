@@ -1,5 +1,6 @@
 import styles from './Section.module.scss';
 
+//Перенести в SectionLayout
 function Section({ children, sectionName }) {
   return (
     <section className={`${styles.layout}`}>
