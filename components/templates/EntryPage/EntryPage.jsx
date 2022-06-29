@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Card, Carousel } from '../../elements';
-import { Section } from '../../modules';
+import { ModalAuth, ModalRegister, Section } from '../../modules';
 import styles from './EntryPage.module.scss';
 
 function EntryPage({ titles }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <Section sectionName='Popular'>
@@ -13,7 +16,6 @@ function EntryPage({ titles }) {
         </Carousel>
       </Section>
       <Section sectionName='Recent Updates'>
-        {/* Убрать wrapper в listings ** А может и нет */}
         <div className={styles['cards-wrapper']}>
           {titles.map((title) => (
             <Card key={title.id} type='sm' title={title} />

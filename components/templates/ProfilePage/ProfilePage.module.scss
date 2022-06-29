@@ -38,11 +38,6 @@
 	width: 97%;
 }
 
-.input {
-	@include input-base;
-	flex: 1;
-}
-
 .items {
 	@include flex-col-with-gap(0.7rem);
 }

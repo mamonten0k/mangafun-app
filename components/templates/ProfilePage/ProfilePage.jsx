@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Comment, Tabs } from '../../elements';
+import { Breadcrumb, Card, Comment, Tabs } from '../../elements';
 import styles from './ProfilePage.module.scss';
 
 const ProfilePage = ({ titles }) => {
@@ -15,26 +15,22 @@ const ProfilePage = ({ titles }) => {
           objectFit='cover'
           style={{ borderRadius: '.4rem' }}
         />
-        <div className={styles.breadcrumbs}>Main page / Profile</div>
+        {/* <Breadcrumb path={['/', 'profile']} /> */}
       </div>
-      <Tabs initialTab={'Titles'}>
+      <Tabs initialTab='Titles' flow='vertical'>
         <div className={styles.items} label='Titles'>
           {titles.map((title) => (
             <Card
               key={`title-${title.id}`}
               id={title.id}
-              type={'md'}
+              type='md'
               title={title}
             />
           ))}
         </div>
         <div className={styles.items} label='Comments'>
           {titles.map((title) => (
-            <Comment
-              key={`comment-${title.id}`}
-              title={title}
-              type={'default'}
-            />
+            <Comment key={`comment-${title.id}`} title={title} type='default' />
           ))}
         </div>
       </Tabs>
